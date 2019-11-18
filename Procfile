@@ -1,1 +1,1 @@
-web: gunicorn DSProjects.wsgi --log-file -
+web: gunicorn myproject.wsgi --log-file -
