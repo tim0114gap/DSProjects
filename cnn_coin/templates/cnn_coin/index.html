@@ -1,13 +1,13 @@
 {% load static %}
 <head>
   <link href="{% static 'cnn_coin/main.css' %}" rel='stylesheet'>
-  <script class="jsbin" src="{% static 'cnn_coin/man.js' %}"></script>
+  <!--<script class="jsbin" src="{% static 'cnn_coin/man.js' %}"></script>-->
 </head>
 <body>
   <div class='main'>
     <h1>Indian Coin</h1>
 
-            <form method="POST" action="{% url 'cnn_coin:index' %}" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.image }}
                 <input type="submit">
