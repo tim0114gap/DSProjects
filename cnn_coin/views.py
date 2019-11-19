@@ -12,7 +12,7 @@ class PicCreateView(CreateView):
     model = ImageModel
     form_class = ImageForm
     template_name = 'cnn_coin/index.html'
-    success_url = reverse_lazy('cnn_coin:view')
+    success_url = reverse_lazy('view')
 
 class ModelListView(ListView):
     model = ImageModel

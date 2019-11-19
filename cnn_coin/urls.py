@@ -16,7 +16,6 @@ Including another URLconf
 from . import views
 from django.urls import path
 
-app_name = 'cnn_coin'
 urlpatterns = [
     path('index/', views.PicCreateView.as_view(), name='index'),
     path('view/', views.ModelListView.as_view(), name='view'),
