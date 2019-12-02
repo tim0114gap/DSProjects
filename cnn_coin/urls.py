@@ -18,6 +18,6 @@ from django.urls import path
 
 app_name="cnn_coin"
 urlpatterns=[
-    path("index",views.index,name="index"),
+    path("",views.index,name="index"),
     path("predict/",views.predict,name="predict"),
 ]
