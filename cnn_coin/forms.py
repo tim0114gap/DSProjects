@@ -6,9 +6,8 @@ class ImageForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ImageForm, self).__init__(*args, **kwargs)
         self.fields['image'].widget.attrs = {
-            "type":"file",
-            "id":"file",
-            "name":"file",
+            "class":"choose_button",
+            "value":"select",
         }
     
     class Meta:
