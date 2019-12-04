@@ -38,7 +38,7 @@ def predict(request):
     obj.delete()
     photo=ImageModel(image=form.cleaned_data["image"])
     photo.save()
-    predicted, percentage, time, result= photo.predict()
+    predicted, percentage, time, rupee, won= photo.predict()
     obj = ImageModel.objects.order_by('image')[0]
     template=loader.get_template("cnn_coin/index.html")
     context={
@@ -46,7 +46,8 @@ def predict(request):
         "photo_data":"/media/"+str(obj.image),
         "predicted":predicted,
         "percentage":percentage,
-        "result":result,
+        "rupee":rupee,
+        "won":won,
         "time":time,
         "form":ImageForm()
     }

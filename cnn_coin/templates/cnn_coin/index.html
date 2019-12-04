@@ -17,33 +17,29 @@
 		  <td colspan=2 rowspan=3 align=center width=400 height=300>
         <table border="2" cellspacing="0" width=350 height=280>
           <tr align=center >
-            <td colspan=4 bgcolor="#E0E0E0" ><B>{{result}}</B></td>
+            <td colspan=4 bgcolor="#E0E0E0" ><B>Today's trade</B></td>
           </tr>
           <tr align=center >
             <td colspan=4 bgcolor="#E0E0E0" ><B>{{time}}</B></td>
           </tr>
           <tr align=center>
-					<td colspan=2><input id="text_box1" type="text"></td>
+					<td colspan=2><input id="text_box1" type="text" value={{rupee}}></td>
 					<td colspan=2>
             <div class="form-group">
               <select class="form-control" id="sel1">
-                <option>Korea</option>
-                <option>Japan</option>
-                <option>USA</option>
-                <option>Rupee</option>
+                <option value={{rupee}}>Rupee</option>
               </select>
             </div>
             </td>
 				  </tr>
         	<tr align=center>
-					<td colspan=2><input id="text_box2" type="text"></td>
+					<td colspan=2><input id="text_box2" type="text" value={{won}}></td>
 					<td colspan=2>
             <div class="form-group">
-              <select class="form-control" id="sel1">
-                <option>Korea</option>
-                <option>Japan</option>
-                <option>USA</option>
-                <option>Rupee</option>
+              <select class="form-control" id="sel2">
+                <option value="16.37">Korea</option>
+                <option value="1.52">Japan</option>
+                <option value="0.014">USA</option>
               </select>
             </div>
             </td>
@@ -65,4 +61,17 @@
   </table> 
   </div>
 </div>
+<script>
+  function clickBtn1(){
+
+    const num1 = parseInt(document.getElementById("sel1").value);
+
+    const e = document.getElementById("sel2");
+    const num2 = e.options[e.selectedIndex].value;
+
+    const result = num1 * num2
+
+    document.getElementById("text_box2").value = result; 
+  }
+</script>
 {% endblock %}

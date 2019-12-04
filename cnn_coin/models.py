@@ -55,10 +55,12 @@ class ImageModel(models.Model):
 
             time = datetime.now()
             
-            rate = round(self.numlst[num] * 16.37, 2)
-            result = str(self.numlst[num])+" rupee = "+ str(rate)+" won"
+            # rate = round(self.numlst[num] * 16.37, 2)
+            # result = str(self.numlst[num])+" rupee = "+ str(rate)+" won"
+            rupee = self.numlst[num]
+            won = round(self.numlst[num] * 16.37, 2)
 
-            return self.imagename[num], maxNum, time, result
+            return self.imagename[num], maxNum, time, rupee, won
 
     def image_src(self):
         with self.image.open() as img:
