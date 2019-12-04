@@ -2,10 +2,18 @@
 {% block title %}App{% endblock %}
 {% block content %}
 
-<div id="div">
+<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Predict Indian Rupee</h1>
+    </div>
+  </div>
+  <div class="mx-auto text-center colorlib-heading">
   <table	width=804 border="2" cellspacing="0">
     <tr >
-      <td colspan=2 width=400 height=300 style="text-align: center;"><img class="preview-img" src={{photo_data}}></img></td>
+      <!--<td colspan=2 width=400 height=300 ><img class="preview-img" src={{photo_data}}></img></td>
+      <td colspan=2 rowspan=2 align=center width=400 height=300>-->
+      <td colspan=2 width=400 height=300 style="text-align: center;"><img class="img-thumbnail" src={{photo_data}}></img></td>
 		  <td colspan=2 rowspan=3 align=center width=400 height=300>
         <table border="2" cellspacing="0" width=350 height=280>
           <tr align=center >
@@ -15,13 +23,13 @@
             <td colspan=4 bgcolor="#E0E0E0" ><B>{{time}}</B></td>
           </tr>
           <tr align=center>
-					  <td colspan=2><input id="text_box1" type="text" value={{rupee}}></td>
-            <td colspan=2>
-              <div class="form-group">
-                <select class="form-control" id="sel1">
-                  <option value={{rupee}}>Rupee</option>
-                </select>
-              </div>
+					<td colspan=2><input id="text_box1" type="text" value={{rupee}}></td>
+					<td colspan=2>
+            <div class="form-group">
+              <select class="form-control" id="sel1">
+                <option value={{rupee}}>Rupee</option>
+              </select>
+            </div>
             </td>
 				  </tr>
         	<tr align=center>
@@ -34,7 +42,8 @@
                 <option value="0.014">USA</option>
               </select>
             </div>
-          </td>
+            </td>
+				  </tr>
           <tr align=center>
             <td colspan=4><button onclick="clickBtn1()">GO</botton></td>
 				  </tr>
@@ -45,7 +54,6 @@
       <td align=center width=200 height=50 class="choosed">choosed : {{predicted}}</td>
       <td align=center width=200 height=50 class="predict">percentage : {{percentage}}%</td>
 	  </tr>
-
     <form action="{% url 'cnn_coin:predict' %}"  method="post" class="form" enctype="multipart/form-data">
       <tr align=center>
         {% csrf_token %}
@@ -54,6 +62,7 @@
       </tr>
     </form>
   </table> 
+  </div>
 </div>
 <script>
   function clickBtn1(){
