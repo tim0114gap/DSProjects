@@ -3,7 +3,7 @@ This is tim0114gap's Machine Learning Project at univ school.
 Use Convolutional Neural Network to predict Indian Rupee images.
 Web framework was made by Django and deploy via Heroku.
 
-This site is able to judge how much photo of Indian rupee is.
+This site is able to judge how much is photo of Indian rupee's value.
 
 # Dependency
 Python3
@@ -24,6 +24,3 @@ None
 
 # Authors
 tim0114gap
-
-# References
-・
