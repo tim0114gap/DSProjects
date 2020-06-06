@@ -3,7 +3,7 @@ certifi==2019.9.11
 django-cloudinary-storage==0.2.3
 dj-database-url==0.5.0
 dj-static==0.0.6
-Django==2.2.1
+Django==2.2.13
 gunicorn==20.0.0
 h5py==2.10.0
 Keras==2.3.1
